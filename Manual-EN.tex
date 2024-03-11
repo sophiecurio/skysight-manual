@@ -37,12 +37,18 @@
   label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/arrow_pink.png}}}}
 }
 
+\newlist{bell}{itemize}{1}
+\setlist[bell,1]{
+  leftmargin=\dimexpr0.5cm+\labelsep\relax,
+  label={\smash{\raisebox{-0.3\height}{\includegraphics[width=0.5cm]{images/icons/bell.png}}}}
+}
+
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
 \title{\includegraphics[width=12cm]{images/logo.png}\\[1cm]SkySight 101: \\[0.5cm]A Glider Pilot's Beginner Guide}
-\author{\\Matthew Scutter, Jon Pring}
-\date{Updated: February 2019}
+\author{\\Matthew Scutter, Jon Pring, Sophie Curio}
+\date{Updated: February 2024}
 
 
 \begin{document}
@@ -96,8 +102,10 @@ For mobile devices, SkySight is accessed via the browser and dedicated mobile we
 
 \subsubsection{Naviter SeeYou PC}
 SeeYou PC can connect with SkySight to provide forecast overlays on the native maps. This feature is available from SeeYou PC V8.0 onwards and can be used for task planning and post flight analysis. Please refer to the Naviter website at \url{http://naviter.com} for details of this feature.
+\subsubsection{Naviter Oudie}
+Weather data can be downloaded and displayed on the Oudie 2, Oudie IGC and Oudie N. You can find detailed instructions in \ref{subsec:oudie} on page \pageref{subsec:oudie}.
 \subsubsection{LXNav LX80xx/90xx}
-SkySight forecast overlays are available to LXNAV users who use the LX80xx and LX90xx series of navigational instruments. The WiFi module must be installed and software updated to the latest version. Support for these devices can be found at \url{http://gliding.lxnav.com}
+SkySight forecast overlays are available to LXNAV users who use the LX80xx and LX90xx series of navigational instruments. The WiFi module must be installed and software updated to the latest version. You can find detailed instructions on how to set up your device in \ref{subsec:lx} on page \pageref{subsec:lx} and support for these devices can be found at \url{http://gliding.lxnav.com}
 \subsection{Contacting SkySight}
 \subsubsection{Product Support}
 Please check the FAQ and this user manual before contacting SkySight support directly. If you have a query that is not covered by SkySight documentation, please contact support via the contact form at \url{http://skysight.io/contact}
@@ -138,7 +146,7 @@ On mobile platforms, the user interface is optimised for mobile screen sizes. Th
 \begin{tip}
 \item By enabling \emph{desktop view} on mobile browsers, it is possible to access all advanced features available on the desktop version.
 \end{tip}
-\subsection{Map Navigation} \label{subsec:mapnav}
+\subsection{Map Navigation}\label{subsec:mapnav}
 The map section of the screen is the primary area to view forecasts. It is similar on both desktop and mobile versions. The map should update automatically once a different forecast parameter is selected or the time of day is changed.
 
 \subsubsection{Map Zoom and Navigation}
@@ -188,14 +196,23 @@ Airspace can be displayed on the map using the \includegraphics[height=15pt]{ima
 \includegraphics[width=8cm]{images/airspace.png}
 \end{center}
 
-\subsubsection{Satellite View} \label{subsec:satview}
+\subsubsection{Satellite View}\label{subsec:satview}
 Recent satellite imagery can be toggled using \includegraphics[height=15pt]{images/icons/sat.png} Sat View. This will display up-to-date satellite imagery of cloud cover over the map, and hide the current data on the map. This is available for past and present time of day.
 
-
-
 \begin{tip}
-\item By selecting the Forecast Satellite Imagery parameter and toggling the Sat View, the forecast can be compared to the actual satellite images.
-\end{tip}
+\item By selecting the Cloud Cover parameter and toggling the Sat View, the forecast can be compared to the actual satellite images.\end{tip}
+
+\subsubsection{Webcams}\label{subsec:webcams}
+The  \includegraphics[height=15pt]{images/icons/webcam.png}  Webcam function conveniently displays all publicly available webcams on the map. The selected image will expand by hoovering other it. This feature is useful to determine current conditions in the task area.
+
+\begin{center}
+\includegraphics[width=12cm]{images/webcam.png}
+\end{center}
+
+\subsubsection{Significant Weather}\label{subsec:sigweather}
+The Significant Weather function will give an overview of the weather in the task area. By displaying various icons, it will display weather events, such as clouds, rain, wind or storms. The following icons
+
+
 
 \subsubsection{Nothing displayed on the map?}
 If there is nothing displayed on the map, it may be for one of the following reasons.
@@ -230,7 +247,7 @@ This feature displays a Skew-T log-P diagram for any point on the map at any tim
 To use the Skew-T tool:
 \begin{enumerate}
 \item Select the \includegraphics[height=15pt]{images/icons/skew-t.png} tool from the selection menu.
-\item Click on the map to select the desired point for the Skew-T forecast.
+\item Click on the map to select the desired point for the Skew-T forecast. 
 \item Change the time on the top slider to see how the forecast develops over the day.
 \item Move the mouse over the chart to see numerical temperature and wind for a given height.
 \item The Skew-T forecast can be closed by clicking on the \includegraphics[height=11pt]{images/icons/exit.png} in the top right of the screen.
@@ -275,7 +292,7 @@ To use the windgram:
 \item Close the windgram by clicking on the \includegraphics[height=11pt]{images/icons/exit.png}.
 \end{enumerate}
 
-\subsection{Route Forecast}
+\subsection{Route Forecast}\label{subsec:routeforecast}
 The route forecast tool is able to estimate cross country speeds and summarise the forecast conditions over a planned task. It is a very useful tool to use during task planning and for competitions. By moving the points, it is easy to find the fastest possible tasks of the day.
 \begin{center}
 \includegraphics[width=12cm]{images/route.png}
@@ -284,14 +301,16 @@ The route forecast tool is able to estimate cross country speeds and summarise t
 To use this tool:
 \begin{enumerate}
 \item Select the \includegraphics[height=15pt]{images/icons/route.png} Route Forecast tool from the side bar, so that it is highlighted in blue.
-\item Click on the map to select the desired start point. \item Click again on the map to place turn points. Repeat as necessary.
-\item The route is confirmed by either returning to the start point, or by pressing `ESC' to finish the task. The optimum start times, forecast overview and task length for the route will then be displayed.
+\item Click on the map to select the desired start point. You can now draw your own task or select from the suggested routes (green = short task, suitable for club pilots in the afternoon, yellow = intermediate task, launching earlier and landing later, red = task that is expected to utilise the entire day, suitable for experienced pilots who wish to fly in difficult conditions).
+\item To draw your own task, click again on the map to place turn points. Repeat as necessary.
+\item The route is confirmed by either returning to the start point, or by pressing `ESC' to finish the task. The optimum start times, forecast overview, optimal route (black line) and task length for the route will then be displayed.
 \item SkySight will automatically select the best window for the day, however it is possible to customise the task window by dragging the red start and finish times.
 \item After confirming the route, it can be modified by clicking and dragging on the turn points. New turn points can be added by clicking and dragging on the small red circles on the halfway point of each leg.
-\item By hovering over the route summary graph, this will show an icon on the map with the estimated location on task at that time of day.
+\item By hovering over the route summary graph, this will show an icon on the map with the estimated location on task at that time of day. The summary graph can either display the direct route or the optimised route which can be selected by clicking either `Point-to-Point' and `Optimized' in the upper left corner.
+\item The drawn route will save and will be synced across all your devices. To remove the task from the menu, simply click \includegraphics[height=15pt]{images/icons/x.png}. To download the task, click \includegraphics[height=15pt]{images/icons/download.png}. 
 \item The route forecast can be quit by clicking on the \includegraphics[height=15pt]{images/icons/route.png} Route Forecast icon from the side bar again.
 \end{enumerate}
-The route forecast tool works best with thermal tasks. The grey shaded area on the graph illustrates the depth of the cumulus. The task speeds indicated on the optimal start time dialogue are based on an 18m Ventus 2 @ 45kg/sqm flying with optimal McCready settings.
+The route forecast tool works best with thermal tasks. The grey shaded area on the graph illustrates the depth of the cumulus. The task speeds indicated on the optimal start time dialogue are based on an 18m Ventus 2 @ 45kg/sqm flying with optimal McCready settings. 
 \begin{tip}
 \item Check section \ref{subsec:taskplan} on page \pageref{subsec:taskplan} for tips on how to use the route forecast tool for task planning.
 \end{tip}
@@ -311,15 +330,33 @@ To access this feature:
 \item The image shown will be a snapshot on a particular time. Change the time of day in the top bar to look at the development of the wave.
 \item To close the cross section, click on the \includegraphics[height=11pt]{images/icons/exit.png} in the top right of the screen.
 \end{enumerate}
+
+\subsection{3D Wave}
+The 3D Wave feature displays the wave in three dimensions, which allows visualisation of the vertical and horizontal dimensions of the wave system. It can help develop an understanding of how the wave develops with altitude, as well as where it is going high.
+
+\begin{center}
+\includegraphics[width=12cm]{images/3dwave.png}
+\end{center}
+
+\begin{enumerate}
+\item Click on the \includegraphics[height=15pt]{images/icons/wave.png} 3D Wave to display the wave in the selected area. 
+\item You can zoom in, move the map around and view the structure of the wave from different directions.
+\item To close the 3D Wave, click on the \includegraphics[height=11pt]{images/icons/exit.png} in the top right of the screen. 
+\end{enumerate}
+
+
 \section{Advanced Features}
-\subsection{Displaying Waypoints}
+\subsection{Displaying Waypoints}\label{subsec:waypoints}
 To aid task planning, SkySight includes the option to upload waypoints. These will be displayed as points on the map.  It may be necessary to zoom in to see the full waypoint names.
 \begin{center}
 \includegraphics[width=12cm]{images/waypoint.png}
 \end{center}
-To upload, click on the \includegraphics[height=15pt]{images/icons/waypoint.png} Waypoints menu and select the desired waypoint file from the device. The upload function supports SeeYou cup files only. This needs to be repeated for each individual device.
+To upload, click on the \includegraphics[height=15pt]{images/icons/waypoint.png} Waypoints menu and select the desired waypoint file from the device. The upload function supports SeeYou cup files only.
 
 It is only possible to upload one waypoint file at a time, and the waypoints will only be visible on the device that they have been uploaded from.
+\begin{tip}
+\item If waypoints have been added, the route forecast tool (see \ref{subsec:routeforecast} on page \pageref{subsec:routeforecast}) will automatically jump to the nearest waypoint while drawing the task. The suggested routes will utilise the available waypoints. 
+\end{tip}
 \subsection{Uploading IGC files for Task Analysis}
 SkySight can be used as a post-flight analysis tool. This is an especially useful tool to confirm in-flight weather observations, and to help understand their development and the interpretation of these in the SkySight forecast.
 
@@ -333,14 +370,29 @@ Please note that to get to the correct date, this must be manually navigated to.
 
 \subsection{Experimental Features}
 SkySight is always under development, and exciting new features are being added all the time.
+
+\section{Account Settings}
+SkySight allows you to personalise some settings. These can be changed under Settings/Account.
+\subsection{Aircraft Type}
+You can choose between sailplane, paraglider, hang glider, balloon or plane. This changes some of the paramters, such as Potential Flight Distance.
+
+\subsection{Default parameter on login}
+This changes the parameter displayed on the landing page.
+
+\subsection{Glider/Pilot Factor}\label{subsec:factor}
+The glider/pilot factor lets you adjust for high performance gliders and experiences pilots. This adjust the potential flight distance, the route forecast speed calculations, suggested routes and the suggested tasks. Higher is faster, 100=Ventus 2-18 @ 45kg/sqm or intermediate HG/PG.
+
+\subsection{Weather/Task Notifications}
+Select on which days you would like to receive noticiations about saves tasks.
+
 \section{Getting the best out of SkySight}
-\subsection{Using SkySight for Task Planning} \label{subsec:taskplan}
+\subsection{Using SkySight for Task Planning}\label{subsec:taskplan}
 SkySight has a lot of useful weather information available, however interpreting it can sometimes be difficult. These basic steps below aim to get you started with using SkySight for task planning.
 
 \begin{enumerate}
 \item Determine the start of thermals. Do this by checking the thermal heights and strengths throughout the morning. Once the thermal heights and strengths are sufficient, judge this as the beginning of the day.
 \item Determine the end of thermals. Use the same method as above to determine the end of the day, and therefore the length of the soaring window.
-\item Check the potential flight distance. Look at this parameter over the planned task areas in combination with the soaring window worked out in (2), to calculate the re	quired task speeds.
+\item Check the potential flight distance. Look at this parameter over the planned task areas in combination with the soaring window worked out in (2), to calculate the required task speeds.
 \item Check the Cu Cloudbase throughout the day to see how convection develops. Note that positive values indicate cumulus.
 \item Check the Cloud Cover  parameters to look for low, mid and high level cloud development and movement, which may affect thermal strengths.
 \item Check the wind parameters, which may be an indication of streeting, wave, or convergence.
@@ -349,7 +401,105 @@ SkySight has a lot of useful weather information available, however interpreting
 \item It is always useful to validate understanding of the forecast using the Point Skew-T tool. For example, this can illustrate moisture in the airmass, changing airmasses, and vertical development.
 \end{enumerate}
 
+\begin{tip}
+\item Never want to miss a good flying day? Turn on notifications for a task. Simply draw a task and then select the \includegraphics[height=9pt]{images/icons/bell.png} to receive an email when this task is achievable.
+\end{tip}
+
 \subsection{Identifying Convergences}
+Convergences are not always easy to identify. Due to the high sensitivity of this parameter, other effects, such as outflow from storms, streeting or even ridge lift can be picked up. 
+
+\begin{enumerate}
+\item Classic example of outflow from storms
+\item Example of undefined noise
+\item Typical convergence line
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=12cm]{images/convergence.png}
+\end{center}
+\pagebreak
+
+Convergences typically develop when two air masses meet. Displaying wind barbs or streams can therefore help identify the convergence.
+
+The Wave X-section tool can be used on convergences to help identify the exact location and horizontal dimension. By moving the time slider, it can further be used to visualise the development of the convergence throughout the day.
+
+\begin{center}
+\includegraphics[width=14cm]{images/convergence_section.png}
+\end{center}
+
+\section{Selecting a weather model}
+SkySight offers visualisation of government-run weather models in Europe (ICON) and North America (HRRR). These can be used to cross-check or second opinion in difficult forecasting circumstances, for example when situations are rapidly changing due to their fast update rates. Select the model you wish to view by clicking SkySight or ICON/HRRR.
+
+\begin{center}
+  \includegraphics[width=4cm]{images/icon_model.png}
+  \end{center}
+
+\begin{tip}
+  \item This feature is specific to Europe and North America.\\
+\end{tip} 
+  
+
+\section{Integration with flight computers}
+\subsection{Naviter Oudie}\label{subsec:oudie}
+The integration with Oudie allows users to display various weather maps in flight. The following parameters are available:
+\begin{enumerate}
+\item Convergence
+\item XC Speed Hourly
+\item Waves
+\item Wind
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=16cm]{images/oudie.png}
+\end{center}
+
+To download the weather layers:
+
+\begin{enumerate}
+\item Connect your Oudie to your PC or Mac and open Naviter Updater
+\item Log into your SeeYou account (cloud or desktop version) und navigate to the `Settings' menu. Enter your email in the `Weather SkySight Integration' field and click `Update'.
+
+\begin{tip}
+\item Make sure to enter the email address that is linked to your SkySight account.\\
+\end{tip} 
+
+
+\item Navigate to `My Devices' and select which forecast regions you wish you see on your device. You can select the region(s) of interest under `Weather Forecast Regions'.
+\item Open the Naviter Updater and click the `Update' button under `SeeYou Cloud'. Once the weather for the day has been downloaded, it should say `up-to-date'. 
+
+\begin{center}
+\includegraphics[width=4cm]{images/weather_downloaded.png}
+\end{center}
+ 
+\item Disconnect your device and launch SeeYou Mobile
+\item Navigate to the main menu and click on the Weather button. You should now see the above mentioned parameters
+\item Select the parameters you wish to display and return back to the map
+
+\end{enumerate}
+
+\subsection{LX80xx and LX90xx}\label{subsec:lx}
+To connect SkySight to your LX device:
+
+\begin{enumerate}
+\item Visit \url{https://cs.lxnav.com} and log in to your account
+\item Select the `Services' tab and click on `Add Service' to add SkySight to your account
+\item Log in with your SkySight username and password
+\end{enumerate}
+
+There are two ways to display the SkySight layers on your device. You can either set it up on your device or using LX Styler.
+
+To modify the weather layers directly on the device, select the Graphics menu and click on the `Weather' option. This will open a menu in which you will be able to select which layer you want to display on the map. This weather layer will be displayed on all pages. 
+
+\begin{tip}
+\item Changing the history span edits the time window displayed on the map - if this is set to 0, a static image will be displayed which corresponds to the current time.
+\end{tip}
+
+Open LX Styler, which can be downloaded from \url{https://gliding.lxnav.com/software/lx-styler/}. Double-click on the page that you want to modify. Click once on the screen and select the layer you wish to add in the menu bar on the left under `Weather'. Make sure the `Use map settings only for current page' is set to `yes' unless you want to display the map on every page.
+
+To add an info box showing what is being displayed on the map, select `Data' from the menu bar on the top of the page, navigate to `Misc' or and select `Weather Info' box. This will display the time and the name of the forecast that is currently being displayed.
+
+Setting up SkySight layers using LX Styler has the advantage that you can select which pages and maps you want the weather displayed on. You can for example display the rain radar on one page, satellite picture on the next and convergence on a third page without having to change the settings each time you want to view a new parameter.  
+
 
 
 \pagebreak
@@ -358,9 +508,12 @@ SkySight has a lot of useful weather information available, however interpreting
 
 \subsection{Thermal}
 \subsubsection{Potential Flight Distance}
-\paragraph{18m}Distance an 18m Ventus 2 @ 45kg/sqm might be expected to fly, taking off at first thermals and landing at last, assuming MacCready theory in high conditions and slower in weak.
-\paragraph{Club}Distance a Cirrus @ 31kg/sqm might be expected to fly, taking off at first thermals and landing at last, assuming MacCready theory in high conditions and slower in weak.
-\subsubsection{Cross Country Speed}
+Distance you might be expected to fly according to your glider/pilot factor (see section \ref{subsec:factor} on page \pageref{subsec:factor}), taking off at first thermals and landing at last, assuming MacCready theory in high conditions and slower in weak.
+\begin{tip}
+  \item To receive an email notification when the potential flight distance exceeds a certain parameter, click the \includegraphics[height=9pt]{images/icons/bell.png} button and click on the point on the map you wish to watch. You can name the alert, adjust the distance or remove it on the new menu item under 'Potential Flight Distance' in the menu bar. \\
+\end{tip}
+  
+\subsubsection{Cross Country Speed (XC Speed)}
 XC Speed an 18m Ventus 2 @ 45kg/sqm might be expected to fly, in an hour, according to Macready
 \subsubsection{Thermal Strength \& BS Ratio}
 Strength of thermals, with increasing stipple for how broken the thermals will be (Buoyancy Shear), dense stipple possibly being unsoarable.
@@ -368,8 +521,8 @@ Strength of thermals, with increasing stipple for how broken the thermals will b
 Height at which thermals fall below 175fpm.
 \subsubsection{Depth of Thermals(AGL)}
 Height above ground at which thermals fall below 175 fpm.
-\subsubsection{Surface Heating}
-Heat transferred into the atmosphere due to solar heating of the ground, creating thermals.
+\subsubsection{Significant weather}
+Significant weather overlaid on depth of thermals.
 \subsection{Cloud}
 \subsubsection{Cu Depth}
 Difference between the top of predicted thermals and the condensation layer, increasingly positive values indicating more likely cumulus, negative values indicating unlikely cumulus.
@@ -377,42 +530,59 @@ Difference between the top of predicted thermals and the condensation layer, inc
 In areas where cumulus is expected to form, the height of that cumulus above sea level. Grey indicates possible cloud.
 \subsubsection{Overdevelopment}
 Shows areas likely to overdevelop, as a percentage of 2000ft depth of overdevelopment. 0-40 indicates mild, 40-65 indicates substantial and 65+ may be unsoarable.
+\subsubsection{Cloud Cover}
+Cloud cover forecast, divided into Low (0-4000m), Medium (4000-8000m) and High (8000m+).
 \subsubsection{CAPE / Storms}
 Convective Available Potential Energy. Higher values indicate greater potential instability, larger updraft velocities within deep convective clouds, and greater potential for thunderstorm development.
 \subsubsection{Rain}
 Rain accumulated over the last half hour.
-\subsubsection{Cloud Cover}
-\paragraph{Low Level} Low cloud cover percentage, of any type, eg. Cu,Sc,St (1013hPa - 642hPa, 0-4,000m, 0-FL130)
-\paragraph{Mid Level} Mid level cover cloud percentage, eg. Ac,As,Cb (642hPa - 350hPa, 4,000-10,000m, FL130-FL330)
-\paragraph{High Level} High cloud cover percentage, eg. Ci,Cs (350hPa-150hPa, 10,000m-20,000m, FL330-FL650)
-\subsubsection{Forecast Satellite View}
-Cloud cover forecast intended to mimic a real satellite photo
 \subsubsection{Surface Temperature}
 The temperature at a height of 2m above ground level.
 \subsubsection{Surface Dewpoint}
 The dew point temperature at a height of 2m above ground level.
 \subsection{Wind}
 \subsubsection{Barbs \& Streams}
-\subsubsection{Synoptic Map}
-\subsubsection{Ridge Lift}
-Areas of predicted ridge lift.
-\subsubsection{MSL Pressure}
-Atmospheric Pressure at Mean Sea Level in mBar.
 \subsubsection{Surface Wind}
 The speed and direction of the wind 2m above the ground.
-\subsubsection{Boundary Layer Average Wind}
+\subsubsection{Thermal Layer Average Wind}
 The speed and direction of the vector-averaged wind in the BL.
-\subsubsection{Boundary Layer Top Wind}
+\subsubsection{Thermal Layer Top Wind}
 The speed and direction of the wind at the top of the BL.
-\subsubsection{Wind Shear}
-Difference in wind between the top and bottom of the Boundary Layer.
-\subsection{Wave}
 \subsubsection{Convergence}
 Maximum up/down motion within the Boundary Layer, as created by horizontal wind movement.
+\subsubsection{Ridge Lift}
+Areas of predicted ridge lift.
+\subsubsection{Wind Shear}
+Difference in wind between the top and bottom of the Boundary Layer.
+\subsubsection{MSL Pressure}
+Atmospheric Pressure at Mean Sea Level in mBar.
+\subsection{Wave}
 \subsubsection{Vertical Velocity}
 Vertical velocity at specified pressure altitude, plus wind speed/direction barbs. Used for wave/convergence. Grey indicates possible cloud layers.
 
-
-
+\subsection{General}
+\subsubsection{Low level cloud cover}
+Low cloud cover percentage, of any type, eg. Cu,Sc,St (1013hPa - 642hPa, 0-4,000m, 0-FL130)
+\subsubsection{Mid level cloud cover}
+Mid level cover cloud percentage, eg. Ac,As,Cb (642hPa - 350hPa, 4,000-10,000m, FL130-FL330)
+\subsubsection{High level cloud cover}
+High cloud cover percentage, eg. Ci,Cs (350hPa-150hPa, 10,000m-20,000m, FL330-FL650)
+\subsubsection{Thermal Hotspots}
+Hotspots from thermal.kk7.ch
+\subsubsection{Turbulence (SFC-FL100)}
+Turbulence severity below ~15,000ft, including thermal, mountain wave, convective effects
+\subsubsection{Turbulence (FL100-FL250)}
+Turbulence severity below ~15,000ft, including thermal, mountain wave, convective effects
+\subsubsection{Rain last 72hrs}
+Rain accumulated last 72 hours, as observed and calculated by the Bureau of Meterology.
+\begin{tip}
+\item This feature might only be available in certain areas.\\
+\end{tip}
+\subsubsection{Turbulence (FL250-FL400)}
+Turbulence Severity above ~15,000ft, including mountain wave and convective effects
+\subsubsection{Freezing Level}
+Freezing level.
+\subsubsection{Density Altitude (Surface)}
+Altitude relative to standard atmospheric conditions at which the air density would be equal to the indicated air density at the place of observation. In other words, the density altitude is the air density given as a height above mean sea level.
 
 \end{document}

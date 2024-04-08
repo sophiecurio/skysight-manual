@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage{fullpage, graphicx, url, enumitem, parskip}
+\usepackage{fullpage, graphicx, url, enumitem, parskip, svg}
 
 \newlist{tip}{itemize}{1}
 \setlist[tip,1]{
@@ -66,7 +66,7 @@
 SkySight is an interactive forecasting tool. It combines the latest forecast modelling technologies with an intuitive user interface, to provide high resolution forecasts and powerful flight planning tools.
 
 
-\subsubsection{About the Development Team}
+% \subsubsection{About the Development Team}
 
 
 \subsection{How to use this manual}
@@ -115,6 +115,15 @@ We are constantly looking to improve SkySight and always welcome any suggestions
 \url{skysight@skysight.io}
 \end{flushleft}
 \section{Getting Started}
+
+\subsection{Selecting Aircraft Type}
+When SkySight is launched for the first time, it will prompt you to select your aircraft type. The options are hang glider, balloon, plane, paraglider or sailplane. 
+\begin{center}
+\includegraphics[width=6cm]{images/aircraft_type.png}
+\end{center}
+Some parameters will change depending on the aircraft type selected and some features are only available for certain aircraft types. You can change your aircraft type at any time (see section \ref{subsec:aircraft_type} on page \pageref{subsec:aircraft_type}). A description of aircraft-specific features can be found in section \ref{subsec:specific_features} on page \pageref{subsec:specific_features}.
+
+
 \subsection{User Interface}
 \subsubsection{Desktop User Interface}
 When SkySight is launched, the following interface will appear.
@@ -202,15 +211,24 @@ Recent satellite imagery can be toggled using \includegraphics[height=15pt]{imag
 \begin{tip}
 \item By selecting the Cloud Cover parameter and toggling the Sat View, the forecast can be compared to the actual satellite images.\end{tip}
 
-\subsubsection{Webcams}\label{subsec:webcams}
-The  \includegraphics[height=15pt]{images/icons/webcam.png}  Webcam function conveniently displays all publicly available webcams on the map. The selected image will expand by hoovering other it. This feature is useful to determine current conditions in the task area.
+% \subsubsection{Webcams}\label{subsec:webcams}
+% The  \includegraphics[height=15pt]{images/icons/webcam.png}  Webcam function conveniently displays all publicly available webcams on the map. The selected image will expand by hoovering other it. This feature is useful to determine current conditions in the task area.
 
-\begin{center}
-\includegraphics[width=12cm]{images/webcam.png}
-\end{center}
+% \begin{center}
+% \includegraphics[width=12cm]{images/webcam.png}
+% \end{center}
 
 \subsubsection{Significant Weather}\label{subsec:sigweather}
-The Significant Weather function will give an overview of the weather in the task area. By displaying various icons, it will display weather events, such as clouds, rain, wind or storms. The following icons
+The Significant Weather function will give an overview of the weather in the task area. By displaying various icons, it will display weather events, such as clouds, rain, wind or storms.
+\begin{itemize}
+\item \includegraphics[height=15pt]{images/icons/cu-1.png} Scattered cumulus
+\item \includegraphics[height=15pt]{images/icons/cu-2.png} Cumulus
+\item \includegraphics[height=15pt]{images/icons/cu-od-3.png} Congested cumulus
+\item \includegraphics[height=15pt]{images/icons/cu-od-4.png} Overdevelopment
+\item \includegraphics[height=15pt]{images/icons/cu-rain-7.png} Rain
+\item \includegraphics[height=15pt]{images/icons/cu-storm-6.png} Storm potential
+\end{itemize}
+
 
 
 
@@ -371,9 +389,19 @@ Please note that to get to the correct date, this must be manually navigated to.
 \subsection{Experimental Features}
 SkySight is always under development, and exciting new features are being added all the time.
 
+\subsection{Aircraft-specific Features}\label{subsec:specific_features}
+
+Some parameters and features, such as the PFD, XC Speed and Route Forecast will take the aircraft type into account. some parameters are only viewable for certain aircraft.
+
+\subsubsection{Paraglider Launch Sites}
+
+
+Paraglider launch sites are shown on the map as \includegraphics[height=12pt]{images/icons/paraglider_launch.png}. The fill colour indicates whether a specific site is suitable for a launch: green indicates good conditions, orange indicates potentially suitable conditions, blue indicates no significant wind and red indicates that the conditions are not suitable. The calculation of this considers wind, rain, showers and thermals. The wind barb indicates the wind direction and strenght. This data is taken from \url{https://paraglidingearth.com/}. If your launch point is missing, you can add it to Paragliding Earth.
+
+
 \section{Account Settings}
 SkySight allows you to personalise some settings. These can be changed under Settings/Account.
-\subsection{Aircraft Type}
+\subsection{Aircraft Type}\label{subsec:aircraft_type}
 You can choose between sailplane, paraglider, hang glider, balloon or plane. This changes some of the paramters, such as Potential Flight Distance.
 
 \subsection{Default parameter on login}
@@ -427,7 +455,7 @@ The Wave X-section tool can be used on convergences to help identify the exact l
 \includegraphics[width=14cm]{images/convergence_section.png}
 \end{center}
 
-\section{Selecting a weather model}
+\subsection{Selecting a weather model}
 SkySight offers visualisation of government-run weather models in Europe (ICON) and North America (HRRR). These can be used to cross-check or second opinion in difficult forecasting circumstances, for example when situations are rapidly changing due to their fast update rates. Select the model you wish to view by clicking SkySight or ICON/HRRR.
 
 \begin{center}
@@ -561,6 +589,7 @@ Atmospheric Pressure at Mean Sea Level in mBar.
 Vertical velocity at specified pressure altitude, plus wind speed/direction barbs. Used for wave/convergence. Grey indicates possible cloud layers.
 
 \subsection{General}
+Ob diese Parameter zu sehen sind, ist abhängig vom ausgewählten Flugzeugtyp und der Region.
 \subsubsection{Low level cloud cover}
 Low cloud cover percentage, of any type, eg. Cu,Sc,St (1013hPa - 642hPa, 0-4,000m, 0-FL130)
 \subsubsection{Mid level cloud cover}
@@ -570,16 +599,16 @@ High cloud cover percentage, eg. Ci,Cs (350hPa-150hPa, 10,000m-20,000m, FL330-FL
 \subsubsection{Thermal Hotspots}
 Hotspots from thermal.kk7.ch
 \subsubsection{Turbulence (SFC-FL100)}
-Turbulence severity below ~15,000ft, including thermal, mountain wave, convective effects
+Turbulence severity below ~10,000ft, including thermal, mountain wave, convective effects
 \subsubsection{Turbulence (FL100-FL250)}
-Turbulence severity below ~15,000ft, including thermal, mountain wave, convective effects
+Turbulence severity below ~25,000ft, including thermal, mountain wave, convective effects
 \subsubsection{Rain last 72hrs}
 Rain accumulated last 72 hours, as observed and calculated by the Bureau of Meterology.
 \begin{tip}
 \item This feature might only be available in certain areas.\\
 \end{tip}
 \subsubsection{Turbulence (FL250-FL400)}
-Turbulence Severity above ~15,000ft, including mountain wave and convective effects
+Turbulence Severity above ~25,000ft, including mountain wave and convective effects
 \subsubsection{Freezing Level}
 Freezing level.
 \subsubsection{Density Altitude (Surface)}
